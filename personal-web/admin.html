@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>admin.exe / my space</title>
+  <link rel="icon" href="assets/icons/retro-pc.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="js/admin-community.js" defer></script>
+  <script src="js/admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <main class="admin-desktop">
+    <div class="topline"><a href="index.html">← my space</a><span>the room behind the wires.</span></div>
+    <section class="window admin-window">
+      <div class="titlebar"><h1><img src="assets/icons/retro-pc.svg" alt="">admin.exe</h1><span class="window-ornament" aria-hidden="true">□</span></div>
+      <div class="window-body">
+        <p id="boot-status" role="status">conectando ao seu painel...</p>
+        <section id="auth-screen" hidden>
+          <div class="login-heading"><img src="assets/icons/retro-pc.svg" alt="Monitor retrô"><div><span class="section-kicker">private connection</span><h2 id="auth-title">bem-vinda de volta.</h2></div></div>
+          <p id="auth-description">Entre para cuidar do seu cantinho da internet.</p>
+          <form id="auth-form" class="admin-auth-form">
+            <label id="setup-code-label" hidden>código de configuração do terminal<input name="code" autocomplete="off" spellcheck="false"></label>
+            <label>seu usuário<input name="username" required minlength="3" maxlength="40" autocomplete="username" pattern="[A-Za-z0-9_.\-]{3,40}"></label>
+            <label>sua senha<input name="password" type="password" required maxlength="128" autocomplete="current-password"></label>
+            <label id="confirm-password-label" hidden>confirme sua senha<input name="confirm" type="password" maxlength="128" autocomplete="new-password"></label>
+            <button id="auth-submit" type="submit">entrar ↗</button>
+            <p id="auth-message" role="status"></p>
+          </form>
+        </section>
+        <section id="editor-screen" hidden>
+          <div class="admin-toolbar"><div><span class="section-kicker">connected as <b id="admin-name"></b></span><h2>make yourself at home.</h2></div><div class="toolbar-buttons"><button id="save-button">salvar alterações</button><button id="export-button">exportar site ↓</button><a class="admin-button" href="index.html" target="_blank" rel="noopener">ver site ↗</a><button id="logout-button">sair</button></div></div>
+          <p class="publish-note">No servidor do site, salvar publica o conteúdo para todos. Respostas e comentários do admin são publicados pelo botão de cada formulário. Na prévia local, as mudanças ficam neste projeto.</p>
+          <div class="admin-notices"><span id="dirty-state">tudo salvo.</span><p id="editor-message" role="status"></p></div>
+          <div class="admin-layout"><nav id="editor-tabs" aria-label="Seções do administrador"></nav><section id="editor-fields" aria-live="polite"></section></div>
+        </section>
+        <section id="unavailable-screen" hidden><h2 class="page-heading">abra sua conexão local.</h2><p>O painel precisa do servidor que acompanha o projeto. No PowerShell, dentro da pasta personal-web, execute:</p><pre>node tools/serve.mjs</pre><p>Depois abra <a href="http://127.0.0.1:4173/admin.html">http://127.0.0.1:4173/admin.html</a>.</p><p>No Neocities, os visitantes veem apenas o site público; o seu login fica no seu PC.</p></section>
+      </div>
+    </section>
+    <p class="admin-footnote">no noise. just your space.</p>
+  </main>
+</body>
+</html>

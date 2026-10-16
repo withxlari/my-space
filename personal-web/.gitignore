@@ -1,0 +1,17 @@
+.private/
+exports/
+node_modules/
+*.tmp
+.env
+.env.*
+!.env.example
+private/
+data/
+assets/uploads/
+assets/audio/
+js/site-data.js
+*.pem
+*.key
+*.p12
+*.pfx
+*.log

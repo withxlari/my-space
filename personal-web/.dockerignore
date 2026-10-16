@@ -1,0 +1,9 @@
+.private
+private
+data
+.env*
+.git
+node_modules
+exports
+*.zip
+tools/*.test.mjs
